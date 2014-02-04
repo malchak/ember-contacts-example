@@ -7,10 +7,16 @@
   </ul>
 
   <section class="top-bar-section">
-    <!-- Left Nav Section -->
+    {{!-- Left Nav Section --}}
     <ul class="left">
       <li>{{#link-to 'contacts'}}Contacts{{/link-to}}</li>
     </ul>
+
+    {{!-- Right Nav Section --}}
+    <ul class="right" id='right'>
+      <li>{{#link-to 'contacts.new' classNames="button"}}Add New Contact{{/link-to}}</li>
+    </ul>
+
   </section>
 </nav>
 
