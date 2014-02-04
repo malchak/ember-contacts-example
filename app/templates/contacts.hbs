@@ -2,7 +2,7 @@
 
 <ul>
 {{#each }}
-	<li>{{fullName}}</li>
+	<li>{{#link-to 'contacts.show' this}}{{fullName}}{{/link-to}}</li>
 {{else}}
 	no contacts yet.
 {{/each}}

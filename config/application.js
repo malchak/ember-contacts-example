@@ -6,6 +6,6 @@
 //= require router
 //= require_tree ../app
 //= require_tree ./initializers
-//= require_tree ../vendor
+
 
 window.App = require('app').default.create();
