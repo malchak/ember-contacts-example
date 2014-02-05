@@ -1,13 +1,19 @@
-<h2>Contacts Page</h2>
-
-<ul>
-{{#each }}
-	<li>{{#link-to 'contacts.show' this}}{{fullName}}{{/link-to}}</li>
-{{else}}
-	no contacts yet.
-{{/each}}
-</ul>
-
-
+<div class="row">
+	<div class="small-12 small-centered columns" id="contacts-container">
+		<h3 id="contacts-header">My Contacts</h3>
+		<ul id="scrolling-list">
+		{{#each }}			
+			<li id="scrolling-list-item">
+				{{#link-to 'contacts.show' this}}
+					{{!-- {{fullName}} --}}
+					{{gravatar-image email=email}}
+				{{/link-to}}
+			</li>			
+		{{else}}
+			no contacts yet.
+		{{/each}}
+		</ul>
+	</div>
+</div>
 
 {{outlet}}
