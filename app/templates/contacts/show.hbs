@@ -7,5 +7,6 @@
 {{else}}
 	<h3>{{fullName}}</h3>
 	<p>{{email}}</p>
+	{{gravatar-image email=email}}
 	<button {{ action 'edit' }} class="button tiny">Edit</button>
 {{/if}}
