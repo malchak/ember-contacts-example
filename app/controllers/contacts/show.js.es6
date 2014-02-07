@@ -12,6 +12,12 @@ export default Ember.ObjectController.extend({
 		cancel: function(){
 			this.get('model').rollback();
 			this.set('isEditing', false);
+		},
+		destroy: function(){
+			var contact = this.get('model');
+			contact.deleteRecord();
+			contact.save();
+			this.transitionToRoute('contacts');
 		}
 	}
 });
