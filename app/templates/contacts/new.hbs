@@ -1,6 +1,12 @@
-{{input value=first name="first" placeholder="Enter First Name"}}
-{{input value=last name="last" placeholder="Enter Last Name"}}
-{{input value=email name="email" placeholder="Enter YourEmail@example.com" type="email"}}
+<div class="row">
+	<div class="small-9 small-centered columns">
+		{{input value=first name="first" placeholder="Enter First Name"}}
+		{{input value=last name="last" placeholder="Enter Last Name"}}
+		{{input value=email name="email" placeholder="Enter YourEmail@example.com" type="email"}}
 
-<button {{ action 'save' }} class="button">Save</button>
-<button {{ action 'cancel' }} class="button alert">Cancel</button>
+		<button {{ action 'save' }} class="button tiny">Save</button>
+		<button {{ action 'cancel' }} class="button tiny secondary">Cancel</button>
+	</div>
+</div>
+
+

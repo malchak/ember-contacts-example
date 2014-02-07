@@ -1,28 +1,27 @@
 <div class="row">
-  	{{#if isEditing}}
-	  	<div class="small-9 small-centered columns">
-				{{input value=first name="first" placeholder="Enter First Name"}}
-				{{input value=last name="last" placeholder="Enter Last Name"}}
-				{{input value=email name="email" placeholder="Enter YourEmail@example.com" type="email"}}
-				<button {{ action 'done' }} class="button tiny">Done</button>
-				<button {{ action 'cancel' }} class="button tiny secondary">Cancel</button>
-				<button {{ action 'destroy' }} class="button tiny alert" id="float-right">Delete Contact</button>
-			</div>
-		{{else}}
-			<div class="row">
-				<div class="small-9 small-centered columns">
-					<div class="small-4 columns">
-						{{gravatar-image email=email size=200}}
-					</div>
-					<div class="small-5 columns">
-						<h3>{{fullName}}</h3>
-						<p>{{email}}</p>
-						<button {{ action 'edit' }} class="button tiny">Edit</button>		
-					</div>
+	{{#if isEditing}}
+  	<div class="small-9 small-centered columns">
+			{{input value=first name="first" placeholder="Enter First Name"}}
+			{{input value=last name="last" placeholder="Enter Last Name"}}
+			{{input value=email name="email" placeholder="Enter YourEmail@example.com" type="email"}}
+			<button {{ action 'done' }} class="button tiny">Done</button>
+			<button {{ action 'cancel' }} class="button tiny secondary">Cancel</button>
+			<button {{ action 'destroy' }} class="button tiny alert" id="float-right">Delete Contact</button>
+		</div>
+	{{else}}
+		<div class="row">
+			<div class="small-9 small-centered columns">
+				<div class="small-4 columns">
+					{{gravatar-image email=email size=200}}
 				</div>
-			</div>	
-		{{/if}}
-  </div>
+				<div class="small-5 columns">
+					<h3>{{fullName}}</h3>
+					<p>{{email}}</p>
+					<button {{ action 'edit' }} class="button tiny">Edit</button>		
+				</div>
+			</div>
+		</div>	
+	{{/if}}
 </div>
 
 
