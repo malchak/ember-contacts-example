@@ -1,5 +1,6 @@
 #contacts-container {
 	margin-top: 20px;
+	margin-bottom: 40px;
 }
 
 #contacts-header {
@@ -10,8 +11,13 @@
 	list-style-type: none;
   white-space: nowrap;
   overflow-x: auto;
+  text-align: center;
 }
 
 #scrolling-list-item {
 	display: inline;
-} 
+}
+
+#float-right {
+	float: right;
+}

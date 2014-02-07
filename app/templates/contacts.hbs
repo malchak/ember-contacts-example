@@ -5,8 +5,7 @@
 		{{#each }}			
 			<li id="scrolling-list-item">
 				{{#link-to 'contacts.show' this}}
-					{{!-- {{fullName}} --}}
-					{{gravatar-image email=email}}
+					{{gravatar-image email=email}}	
 				{{/link-to}}
 			</li>			
 		{{else}}
