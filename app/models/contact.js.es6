@@ -6,6 +6,8 @@ export default DS.Model.extend({
 
   fullName: function(){
   	return this.get('first') + ' ' + this.get('last');
-  }.property('first', 'last')
+  }.property('first', 'last'),
+
+  errors: {}
 
 });

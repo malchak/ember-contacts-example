@@ -1,12 +1,15 @@
 <div class="row">
 	<div class="small-9 small-centered columns">
 		{{input value=first name="first" placeholder="Enter First Name"}}
+		<small>{{errors.first}}</small>
+
 		{{input value=last name="last" placeholder="Enter Last Name"}}
+		<small>{{errors.last}}</small>
+
 		{{input value=email name="email" placeholder="Enter YourEmail@example.com" type="email"}}
+		<small>{{errors.email}}</small>
 
 		<button {{ action 'save' }} class="button tiny">Save</button>
 		<button {{ action 'cancel' }} class="button tiny secondary">Cancel</button>
 	</div>
 </div>
-
-

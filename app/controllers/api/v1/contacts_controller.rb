@@ -9,7 +9,12 @@ class Api::V1::ContactsController < ApplicationController
 	end
 
 	def create
-		respond_with Contact.create(contact_params) 
+		contact = Contact.create(contact_params)
+		if contact.new_record?
+			render json: { errors: contact.errors.messages }, status: 422
+		else
+			render json: contact, status: 201
+		end			
 	end
 
 	def update

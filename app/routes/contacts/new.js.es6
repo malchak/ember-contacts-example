@@ -6,8 +6,25 @@ export default Ember.Route.extend({
 		save: function(){
 			var attrs = this.get('controller').getProperties('first', 'last', 'email');
 			var contact = this.get('store').createRecord('contact', attrs);
-			contact.save();
-			this.transitionTo('contacts.show', contact);
+			
+			$.post('api/v1/contacts', {contact: attrs}, function(results){
+				this.transitionTo('contacts.show', results);
+			}).fail(function(jqxhr, textStatus, error){
+				if (jqxhr.status === 422) {
+					var errs = JSON.parse(jqxhr.responseText);
+					contact.set('errors', errs.errors);
+				}
+			});
+
+			// contact.save().then(function(contact){
+			// 	this.transitionTo('contacts.show', contact);	
+			// }).then(function(jqxhr, textStatus, error){
+			// 		if (jqxhr.status === 422){
+			// 			errs = JSON.parse(jqxhr.responseText)
+			// 			contact.set('errors', errs.errors);
+			// 		}
+			// });
+			
 		},
 		cancel: function(){
 			this.transitionTo('contacts');
