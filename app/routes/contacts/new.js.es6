@@ -15,16 +15,6 @@ export default Ember.Route.extend({
 					contact.set('errors', errs.errors);
 				}
 			});
-
-			// contact.save().then(function(contact){
-			// 	this.transitionTo('contacts.show', contact);	
-			// }).then(function(jqxhr, textStatus, error){
-			// 		if (jqxhr.status === 422){
-			// 			errs = JSON.parse(jqxhr.responseText)
-			// 			contact.set('errors', errs.errors);
-			// 		}
-			// });
-			
 		},
 		cancel: function(){
 			this.transitionTo('contacts');
